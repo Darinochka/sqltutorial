@@ -29,6 +29,7 @@ join albums
 group by 1
 order by 3 DESC;
 ```
+
 **3) Which countries have the highest sales revenue? What percent of total revenue does each country make up?**
 ```sql
 select customers.Country,
@@ -42,14 +43,16 @@ join customers
 group by 1
 order by 2 DESC;
 ```
-## Second option
+##### Second option
+
 Primarily, we have to find out the total revenue of all countries:
-```
+```sql
 select sum(Total)
 from invoices;
 ```
+
 Now we can calculate the Total and Percentage each of the country:
-```
+```sql
 select customers.Country,
 	round(sum(invoices.Total), 2) as "Total",
 	round((sum(invoices.Total)/2328.6)*100, 2) as "Percentage"
@@ -59,7 +62,8 @@ join invoices
 group by 1
 order by 2 desc;
 ```
-**4) How many customers did each employee support, what is the average revenue for each sale, and what is their total sale? **
+
+**4) How many customers did each employee support, what is the average revenue for each sale, and what is their total sale?**
 ```sql
 select customers.SupportRepId,
 	employees.FirstName,
