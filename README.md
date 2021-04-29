@@ -2,7 +2,7 @@
 
 **1. Which tracks appeared in the most playlists? how many playlist did they appear in?**
 
-```
+```sqlite
 select playlist_track.TrackId,
 	name,
 	count(PlaylistId) as "Number of appearance in playlist"
